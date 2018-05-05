@@ -21,5 +21,3 @@ If the app doesn't allow you to perform an action, such as end a trip, be sure t
 6
 00:00:41,320 --> 00:00:43,320
 Our support team will make sure the rider is charged correctly.
-
-ADDING ENGLISH
