@@ -8,5 +8,8 @@
     "start": "npm run start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "subtitles-parser": "0.0.2"
+  }
 }
