@@ -11,15 +11,11 @@ const directoryReader = () => {
     if (err) throw err;
 
     filesPath = filesPath.map(filePath => {
-      // fileArr.push(filePath);
-      // dirPathArr.push(dirPath);
       return dirPath + filePath;
-      console.log(filesPath);
     });
     filesPath.map(filePath => {
       let subData = getSubData(filePath);
       console.log(subData);
-
       generateSub2TSV(subData, filePath);
     });
   });
