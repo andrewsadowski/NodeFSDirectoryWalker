@@ -40,6 +40,7 @@ const generateSub2TSV = (data, filePath) => {
   //regex to change path from source to output
   filePath = filePath.replace(/srtTest\//, outputPath);
 
+  //Loop through and append each sub to TSV file
   data.forEach(sub => {
     let output = `${sub.id}\t${sub.startTime} --> ${sub.endTime}\t${sub.text}\n`;
     let sortedOutput = output.sort((a, b) => {
