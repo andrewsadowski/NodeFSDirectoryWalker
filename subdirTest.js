@@ -39,11 +39,16 @@ const generateSub2TSV = (data, filePath) => {
   //Loop through and append each sub to TSV file
   data.forEach(sub => {
     let output = `${sub.id}\t${sub.startTime} --> ${sub.endTime}\t${sub.text}\n`;
-    let sortedOutput = output.sort((a, b) => {
-      return a[0] - b[0];
-    });
     fs.appendFile(`./${filePath}.tsv`, sortedOutput, err => {
       if (err) return;
     });
+  });
+};
+
+const sortTSV = filePath => {
+  //Traverse file contents and save to array:
+
+  fileContents.sort((a, b) => {
+    return a[0] - b[0];
   });
 };
