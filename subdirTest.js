@@ -52,3 +52,9 @@ const sortTSV = filePath => {
     return a[0] - b[0];
   });
 };
+
+module.exports = {
+  directoryReader,
+  generateSub2TSV,
+  getSubData
+};
