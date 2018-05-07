@@ -32,6 +32,7 @@ const getSubData = filePath => {
 
 //subtitle => TSV
 const generateSub2TSV = (data, filePath) => {
+  
   //regex to change path from source to output
   filePath = filePath.replace(/srtTest\//, outputPath);
 
