@@ -35,7 +35,6 @@ const generateSub2TSV = (data, filePath) => {
   //regex to change path from source to output
   filePath = filePath.replace(/srtTest\//, outputPath);
 
-
   //Loop through and append each sub to TSV file
   data.forEach(sub => {
     let output = `${sub.id}\t${sub.startTime} --> ${sub.endTime}\t${sub.text}\n`;
@@ -48,14 +47,6 @@ const generateSub2TSV = (data, filePath) => {
     });
   });
 };
-
-// const sortTSV = filePath => {
-//   //Traverse file contents and save to array:
-
-//   fileContents.sort((a, b) => {
-//     return a[0] - b[0];
-//   });
-// };
 
 module.exports = {
   directoryReader,
