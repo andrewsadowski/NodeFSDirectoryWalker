@@ -15,8 +15,8 @@ const directoryReader = () => {
     });
     filesPath.map(filePath => {
       let subData = getSubData(filePath);
-      console.log(subData);
       generateSub2TSV(subData, filePath);
+      console.log(`${filePath} successfully written to Output/`)
     });
   });
 };
@@ -32,26 +32,30 @@ const getSubData = filePath => {
 
 //subtitle => TSV
 const generateSub2TSV = (data, filePath) => {
-  console.log(filePath);
   //regex to change path from source to output
   filePath = filePath.replace(/srtTest\//, outputPath);
+
 
   //Loop through and append each sub to TSV file
   data.forEach(sub => {
     let output = `${sub.id}\t${sub.startTime} --> ${sub.endTime}\t${sub.text}\n`;
-    fs.appendFile(`./${filePath}.tsv`, sortedOutput, err => {
-      if (err) return;
+    fs.appendFileSync(`./${filePath}.tsv`, output, err => {
+      if (err) {
+        console.log(err);
+      } else {
+       return console.log(`${filePath} successfully written to Output/`)
+      }
     });
   });
 };
 
-const sortTSV = filePath => {
-  //Traverse file contents and save to array:
+// const sortTSV = filePath => {
+//   //Traverse file contents and save to array:
 
-  fileContents.sort((a, b) => {
-    return a[0] - b[0];
-  });
-};
+//   fileContents.sort((a, b) => {
+//     return a[0] - b[0];
+//   });
+// };
 
 module.exports = {
   directoryReader,
